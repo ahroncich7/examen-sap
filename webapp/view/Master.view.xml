@@ -13,7 +13,7 @@
 			<m:Label text="Product" labelFor="productInput" />
 		<m:Input
 			id="productInput"
-			placeholder="Enter a value"
+			placeholder="Enter a optimal Stock"
 			liveChange="onInputChange"
 			>
 			<m:suggestionItems>
@@ -77,7 +77,14 @@
 					<Column width="8rem">
 						<m:Label text="Status" />
 						<template>
-							<m:Text text="{}" wrapping="false" />
+							<m:Text text=
+							"{parts: [
+                        'inputValue>/value',
+						'UnitsInStock'
+						],
+                        formatter: '.formatter.statusText'}"
+						class="{= ${UnitsInStock} > 10 ? 'Accept' : 'Reject'}" 
+						wrapping="false" />
 						</template>
 					</Column>
 					<Column width="8rem">

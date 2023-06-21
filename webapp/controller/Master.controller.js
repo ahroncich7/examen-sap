@@ -50,12 +50,12 @@ sap.ui.define([
                     this.byId("openDialog").open()
                 }
 
-                // oModeloData.read("/Products("+catId+")/Category", {
-                //     success: function(data){
-                //         let cat = new JSONModel(data);
-                //         that.byId("openDialog").setModel(cat, "cat")
-                //     }
-                // })
+                oModeloData.read("/Products("+catId+")/Category", {
+                    success: function(data){
+                        let cat = new JSONModel(data);
+                        that.byId("openDialog").setModel(cat, "cat")
+                    }
+                })
 
             },
 
