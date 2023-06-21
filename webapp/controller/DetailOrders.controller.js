@@ -11,10 +11,10 @@ sap.ui.define([
         return Controller.extend("ejercicio.examen.controller.DetailOrders", {
             onInit: function () {
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-  
                 oRouter.getRoute("RouteDetail").attachMatched(this._routeMatched, this);
             },
 
+            //Metodo que bindea los datos elsubPath del modelo para esta vista
             _routeMatched: function (oEvent) {
 
   
