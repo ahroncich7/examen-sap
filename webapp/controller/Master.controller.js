@@ -1,11 +1,14 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
+	"sap/ui/model/json/JSONModel",
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Fragment) {
+    function (Controller,
+	Fragment,
+	JSONModel) {
         "use strict";
 
         return Controller.extend("ejercicio.examen.controller.Master", {
@@ -15,8 +18,10 @@ sap.ui.define([
 
             onClicked: function(oEvent){
                 var oView = this.getView();
+                var that = this;
                 var sPath = oEvent.getSource().getBindingContext().getPath();
-
+                var catId = oEvent.getSource().getBindingContext().getObject()
+                var oModeloData = new sap.ui.model.odata.v2.ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc")
                 if (!this.byId("openDialog")) {
                     Fragment.load(
                         {
@@ -38,6 +43,13 @@ sap.ui.define([
                       });
                     this.byId("openDialog").open()
                 }
+
+                oModeloData.read("/Products("+catId+")/Category", {
+                    success: function(data){
+                        let cat = new JSONModel(data);
+                        that.byId("openDialog").setModel(cat, "cat")
+                    }
+                })
 
             },
 
