@@ -7,10 +7,7 @@ sap.ui.define([
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller,
-	Fragment,
-	JSONModel,
-    formatter) {
+    function (Controller, Fragment, JSONModel, formatter) {
         "use strict";
 
         return Controller.extend("ejercicio.examen.controller.Master", {
@@ -23,11 +20,12 @@ sap.ui.define([
             },
 
             onClicked: function(oEvent){
+
+                //Carga el fragment en la vista
+
                 var oView = this.getView();
-                var that = this;
                 var sPath = oEvent.getSource().getBindingContext().getPath();
-                var catId = oEvent.getSource().getBindingContext().getObject()
-                var oModeloData = new sap.ui.model.odata.v2.ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc")
+              
                 if (!this.byId("openDialog")) {
                     Fragment.load(
                         {
@@ -50,6 +48,11 @@ sap.ui.define([
                     this.byId("openDialog").open()
                 }
 
+                //Intenta definir el oDataModel para pasarlo al fragment como JSON
+                //No funciona aparentemente por el problema de CORS
+                var that = this;
+                var catId = oEvent.getSource().getBindingContext().getObject()
+                var oModeloData = new sap.ui.model.odata.v2.ODataModel("https://services.odata.org/V2/Northwind/Northwind.svc")
                 oModeloData.read("/Products("+catId+")/Category", {
                     success: function(data){
                         let cat = new JSONModel(data);
@@ -59,11 +62,14 @@ sap.ui.define([
 
             },
 
+
+            //Define el close para el dialog
             onClose: function(){
                 this.byId("openDialog").close()
             },
 
 
+            //Metodos para la navegación
             pressOrders: function(oEvent){
                 var ID = oEvent.getSource().getBindingContext().getProperty("ProductID")
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
