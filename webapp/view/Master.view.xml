@@ -75,12 +75,6 @@
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Supplier" />
-						<template>
-							<m:Text text="{/Supplier/SupplierName}" wrapping="false" />
-						</template>
-					</Column>
-					<Column width="8rem">
 						<m:Label text="Status" />
 						<template>
 							<m:Text text="{}" wrapping="false" />
