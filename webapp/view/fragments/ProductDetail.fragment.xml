@@ -1,0 +1,32 @@
+<core:FragmentDefinition xmlns="sap.m" 
+xmlns:core="sap.ui.core"
+xmlns:form="sap.ui.layout.form"
+	xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Dialog id="openDialog">
+	<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="false"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" title="ProductDetail"
+				width="auto">
+			<form:content>
+				<Label text="Product Name" />
+				<Text text="{ProductName}" />
+				<Label text="Unit Price" />
+				<Text text="{UnitPrice}" />
+				<Label text="Stock" />
+				<Text text="{UnitsInStock}" />
+				<Label text="Category" />
+				<Text text="{/Category/CategoryName}" />
+				<Label text="Supplier" />
+				<Text text="{SupplierName}" />
+				<Label text="Status" />
+				<Text text="{}" />
+			</form:content>
+		</form:SimpleForm>
+	 	<Button 
+			type="Accept"
+			text="Accept"
+			press="onClose"
+		>
+			</Button>
+		</Dialog>
+</core:FragmentDefinition>
