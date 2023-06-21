@@ -2,12 +2,13 @@ sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/ui/core/Fragment",
 	"sap/ui/model/json/JSONModel",
-    "../utils/formatter"
+    "../utils/formatter",
+    "../utils/Constants"
 ],
     /**
      * @param {typeof sap.ui.core.mvc.Controller} Controller
      */
-    function (Controller, Fragment, JSONModel, formatter) {
+    function (Controller, Fragment, JSONModel, formatter, Constants) {
         "use strict";
 
         return Controller.extend("ejercicio.examen.controller.Master", {
@@ -30,7 +31,7 @@ sap.ui.define([
                     Fragment.load(
                         {
                             id: oView.getId(),
-                            name: "ejercicio.examen.view.fragments.ProductDetail",
+                            name: Constants.fragments.productDetailFragment.route,
                             controller: this
                         }).then(
                             function (oDialog) {
