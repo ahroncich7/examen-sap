@@ -18,8 +18,12 @@ xmlns:form="sap.ui.layout.form"
 				<Text text="{cat>/CategoryName}" />
 				<Label text="Supplier" />
 				<Text text="{SupplierName}" />
-				<Label text="Status" />
-				<Text text="{}" />
+				<Label text="{inputValue}" />
+				<Text text= "{parts: [
+                        'inputValue>/value'
+						],
+                        formatter: '.formatter.statusText'}"  
+				/>
 			</form:content>
 		</form:SimpleForm>
 	 	<Button 

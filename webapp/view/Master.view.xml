@@ -1,15 +1,25 @@
 <mvc:View controllerName="ejercicio.examen.controller.Master"
     	xmlns="sap.ui.table"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:u="sap.ui.unified"
-	xmlns:c="sap.ui.core"
-	xmlns:m="sap.m"
-    height="100%">
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:c="sap.ui.core"
+		xmlns:m="sap.m"
+  		height="100%">
 	<m:Page
 		showHeader="false"
 		enableScrolling="false"
 		class="sapUiContentPadding">
 		<m:content>
+
+			<m:Label text="Product" labelFor="productInput" />
+		<m:Input
+			id="productInput"
+			placeholder="Enter a value"
+			liveChange="onInputChange"
+			>
+			<m:suggestionItems>
+				<c:Item text="{Name}" />
+			</m:suggestionItems>
+		</m:Input>
 			<Table
 				rows="{/Products}"
 				selectionMode="MultiToggle"
