@@ -5,20 +5,20 @@ xmlns:form="sap.ui.layout.form"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Dialog id="openDialog">
 	<form:SimpleForm class="sapUiResponsiveMargin" columnsL="1" columnsM="1" editable="false"
-				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" title="ProductDetail"
+				labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" title="{i18n>product_detail}"
 				width="auto">
 			<form:content>
-				<Label text="Product Name" />
+				<Label text="{i18n>product_column}" />
 				<Text text="{ProductName}" />
-				<Label text="Unit Price" />
+				<Label text="{i18n>price_column}" />
 				<Text text="{UnitPrice}" />
-				<Label text="Stock" />
+				<Label text="{i18n>stock_column}" />
 				<Text text="{UnitsInStock}" />
-				<Label text="Category" />
+				<Label text="{i18n>category_column}" />
 				<Text text="{cat>/CategoryName}" />
-				<Label text="Supplier" />
+				<Label text="{i18n>supplier_column}" />
 				<Text text="{SupplierName}" />
-				<Label text="Status" />
+				<Label text="{i18n>status}" />
 				<Button
 				text="{parts: [
                         'inputValue>/value',
@@ -35,7 +35,7 @@ xmlns:form="sap.ui.layout.form"
 		</form:SimpleForm>
 	 	<Button 
 			type="Accept"
-			text="Accept"
+			text="{i18n>accept_btn}"
 			press="onClose"
 		>
 			</Button>
