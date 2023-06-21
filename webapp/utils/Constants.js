@@ -9,6 +9,9 @@ sap.ui.define([
             productDetailFragment: {
                 route: "ejercicio.examen.view.fragments.ProductDetail"
             }
+        },
+        input:{
+            defaultValue: 12
         }
     }
 }, true);

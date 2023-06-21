@@ -14,6 +14,7 @@
 		<m:Input
 			id="productInput"
 			placeholder="{i18n>input_placeholder}"
+			value="{inputValue>/value}"
 			liveChange="onInputChange"
 			>
 			<!-- <m:suggestionItems>
