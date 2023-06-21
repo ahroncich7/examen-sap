@@ -28,11 +28,11 @@
 				ariaLabelledBy="title"
                 id="myTable"
                 >
-				<!-- <extension>
+				<extension>
 					<m:OverflowToolbar style="Clear">
-						<m:Title id="title" text="Products"/>
+						<m:Title id="title" text="{i18n>TitleMaster}"/>
 					</m:OverflowToolbar>
-				</extension> -->
+				</extension>
 				<columns>
 					<Column width="11rem">
 						<m:Label text="{i18n>product_column}" />
