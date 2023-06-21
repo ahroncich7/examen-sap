@@ -1,1 +1,8 @@
 /* Enter your custom styles here */
+
+.customSuccess{
+    color: greenyellow;
+}
+.customError {
+    color: red;
+}
