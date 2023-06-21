@@ -70,8 +70,10 @@
 						<template>
 							<m:Text text="{Discontinued}" 
                             wrapping="false" 
-                            
-                            class="{= ${/Discontinued} ? 'customSuccess' : 'customError'  }"
+                            class="{
+      						path: '{Discontinued)',
+					        formatter: '.discFormatter.setDiscClass'
+    						}"
 />
 						</template>
 					</Column>

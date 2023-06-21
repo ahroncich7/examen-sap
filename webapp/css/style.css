@@ -6,3 +6,10 @@
 .Accept .sapMText{
     color: greenyellow;
 }
+
+.Reject {
+    color: red;
+}
+.Accept {
+    color: greenyellow;
+}

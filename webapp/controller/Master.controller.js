@@ -88,6 +88,12 @@ sap.ui.define([
                 let newValue = Number(evt.getParameter("newValue"));
                 this.getView().getModel("inputValue").setProperty("/value", newValue);
 
+            },
+
+            discFormatter: {
+                setDiscClass: function(sDiscontinued){
+                    return sDiscontinued ? "Reject" : "Accept"
+                }
             }
 
 
