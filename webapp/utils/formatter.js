@@ -3,8 +3,11 @@ sap.ui.define([], function () {
     return {
 
         
-        statusText: function (nInputValue) {
-            alert(nInputValue)
+        statusText: function (nInputValue, sUnitsStock) {
+            let nUnitsStock = Number(sUnitsStock) 
+            let res=  nUnitsStock > nInputValue ? "Alto" : "Bajo"
+            
+            return res
         }
     }
 })

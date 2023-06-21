@@ -18,9 +18,10 @@ xmlns:form="sap.ui.layout.form"
 				<Text text="{cat>/CategoryName}" />
 				<Label text="Supplier" />
 				<Text text="{SupplierName}" />
-				<Label text="{inputValue}" />
+				<Label text="Status" />
 				<Text text= "{parts: [
-                        'inputValue>/value'
+                        'inputValue>/value',
+						'UnitsInStock'
 						],
                         formatter: '.formatter.statusText'}"  
 				/>
