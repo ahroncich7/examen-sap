@@ -103,7 +103,7 @@
 
                 {
                     "name": "RouteDetail",
-                    "pattern": "detail",
+                    "pattern": "detail/{productID}",
                     "target": [
                         "TargetDetail"
                     ]

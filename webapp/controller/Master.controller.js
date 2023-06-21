@@ -43,6 +43,15 @@ sap.ui.define([
 
             onClose: function(){
                 this.byId("openDialog").close()
+            },
+
+
+            pressOrders: function(oEvent){
+                var ID = oEvent.getSource().getBindingContext().getProperty("ProductID")
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("RouteDetail", {
+                    productID: ID
+                })
             }
 
             

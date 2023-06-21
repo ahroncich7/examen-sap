@@ -10,7 +10,7 @@
 		class="sapUiContentPadding">
 
         <m:Text
-            text="texto nuevo"
+            text="{ProductName}"
         >
             
         </m:Text>
