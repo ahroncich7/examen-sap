@@ -3,13 +3,13 @@
     xmlns="sap.m"
 	xmlns:core="sap.ui.core">
     <Page id="orders" title="{i18n>title}">
-        <List headerText="Custom Content" mode="Delete" items="{path: '/Order_Details'}" >
+        <List headerText="{i18n>order_details_title}" mode="Delete" items="{path: '/Order_Details'}" >
 		<CustomListItem>
 			<HBox>
 				<core:Icon size="2rem" src="sap-icon://attachment-photo" class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" />
 				<VBox class="sapUiSmallMarginBegin sapUiSmallMarginTopBottom" >
-					<Link text="Order N°: {OrderID}" press="handlePress"/>
-					<Label text="Product ID: {ProductID}"/>
+					<Link text="{i18n>order_id_text}: {OrderID}" press="handlePress"/>
+					<Label text="{i18n>product_id_text}: {ProductID}"/>
 				</VBox>
 			</HBox>
 		</CustomListItem>
