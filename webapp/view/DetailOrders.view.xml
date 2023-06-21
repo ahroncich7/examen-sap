@@ -1,0 +1,18 @@
+<mvc:View controllerName="ejercicio.examen.controller.DetailOrders"
+    	xmlns="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+	xmlns:m="sap.m"
+    height="100%">
+	<m:Page
+		enableScrolling="false"
+		class="sapUiContentPadding">
+
+        <m:Text
+            text="texto nuevo"
+        >
+            
+        </m:Text>
+	</m:Page>
+</mvc:View>

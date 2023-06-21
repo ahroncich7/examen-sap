@@ -95,9 +95,17 @@
             "routes": [
                 {
                     "name": "RouteMaster",
-                    "pattern": ":?query:",
+                    "pattern": "",
                     "target": [
                         "TargetMaster"
+                    ]
+                },
+
+                {
+                    "name": "RouteDetail",
+                    "pattern": "detail",
+                    "target": [
+                        "TargetDetail"
                     ]
                 }
             ],
@@ -108,6 +116,13 @@
                     "clearControlAggregation": false,
                     "viewId": "Master",
                     "viewName": "Master"
+                },
+                "TargetDetail": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "DetailOrders",
+                    "viewName": "DetailOrders"
                 }
             }
         },
