@@ -46,6 +46,15 @@ sap.ui.define([
   
             },
 
+            handlePress: function(evt){
+                //Debería aqui poder obtener el id de la orden y del producto y
+                //vincular un oDataModel con esa consulta a Nordwind 
+                //para obtener la entidad /Order_Details(OrderID=10285,%20ProductID=1)
+                //Con eso, podría pasar un model JSON para dejar accesibles los datos en un 
+                //fragment. El problema es que no logró conectar un model oData por el problema con CORS (ver intento en Master) 
+
+            }
+
 
 
             

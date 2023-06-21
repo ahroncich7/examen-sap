@@ -10,15 +10,15 @@
 		class="sapUiContentPadding">
 		<m:content>
 
-			<m:Label text="Product" labelFor="productInput" />
+			<m:Label text="{i18n>input_title}" labelFor="productInput" />
 		<m:Input
 			id="productInput"
-			placeholder="Enter a optimal Stock"
+			placeholder="{i18n>input_placeholder}"
 			liveChange="onInputChange"
 			>
-			<m:suggestionItems>
-				<c:Item text="{Name}" />
-			</m:suggestionItems>
+			<!-- <m:suggestionItems>
+				<c:Item text="Sugested Item" />
+			</m:suggestionItems> -->
 		</m:Input>
 			<Table
 				rows="{/Products}"
@@ -28,44 +28,44 @@
 				ariaLabelledBy="title"
                 id="myTable"
                 >
-				<extension>
+				<!-- <extension>
 					<m:OverflowToolbar style="Clear">
 						<m:Title id="title" text="Products"/>
 					</m:OverflowToolbar>
-				</extension>
+				</extension> -->
 				<columns>
 					<Column width="11rem">
-						<m:Label text="Product Name" />
+						<m:Label text="{i18n>product_column}" />
 						<template>
 							<m:Link text="{ProductName}" press="onClicked" wrapping="false" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="Price" />
+						<m:Label text="{i18n>price_column}" />
 						<template>
 							<m:Text text="$ {UnitPrice}" wrapping="false" />
 						</template>
 					</Column>
 					<Column width="11rem">
-						<m:Label text="Stock" />
+						<m:Label text="{i18n>stock_column}" />
 						<template>
 							<m:Text text="{UnitsInStock}" wrapping="false" />
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Category" />
+						<m:Label text="{i18n>category_column}" />
 						<template>
 							<m:Text text="{/Category/CategoryName}" wrapping="false" />
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Supplier" />
+						<m:Label text="{i18n>supplier_column}" />
 						<template>
 							<m:Text text="{/Supplier/SupplierName}" wrapping="false" />
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Discontinued" />
+						<m:Label text="{i18n>continuity_column}" />
 						<template>
 							<m:Text text="{Discontinued}" 
                             wrapping="false" 
@@ -75,7 +75,7 @@
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Status" />
+						<m:Label text="{i18n>status}" />
 						<template>
 							<m:Text text=
 							"{parts: [
@@ -83,14 +83,14 @@
 						'UnitsInStock'
 						],
                         formatter: '.formatter.statusText'}"
-						class="{= ${UnitsInStock} > 10 ? 'Accept' : 'Reject'}" 
+						class="{= ${UnitsInStock} > ${inputValue>/value} ? 'Accept' : 'Reject'}" 
 						wrapping="false" />
 						</template>
 					</Column>
 					<Column width="8rem">
-						<m:Label text="Orders" />
+						<m:Label text="{i18n>orders_column}" />
 						<template>
-							<m:Link text="See Orders" press="pressOrders" wrapping="false" />
+							<m:Link text="{i18n>orders_link}" press="pressOrders" wrapping="false" />
 						</template>
 					</Column>
 				</columns>
